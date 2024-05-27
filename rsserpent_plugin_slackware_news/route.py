@@ -1,12 +1,13 @@
 from typing import Any, Dict
 
 from lxml import html
-from rsserpent_rev.utils import HTTPClient
+from rsserpent_rev.utils import HTTPClient, cached
 
 
 path = "/slackware-news"
 
 
+@cached
 async def provider() -> Dict[str, Any]:
     """Return the latest news from The Slackware Linux Project.
 
